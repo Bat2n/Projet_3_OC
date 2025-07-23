@@ -338,7 +338,7 @@ img {
   display: none;
 }
 
-/*Contenu textuel : titre et sous-titre  */
+/*Contenu textuel : titre et sous-titre  
 .menu__container-label {
   z-index: 2;
   flex-grow: 1;
@@ -347,7 +347,7 @@ img {
   gap: 4px;
   max-width: 100%;
   transition: max-width 0.3s ease;
-}
+}*/
 
 /* Animation : bande verte claire à droite  */
 .checkbox-highlight {
@@ -450,11 +450,24 @@ img {
 
 .menu__heading {
   font-size: 1.125rem;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
 }
 
 .menu__paragraph {
   font-size: 0.95rem;
   margin-top: -0.2rem;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
 }
 
 /*** LOCALISATION ***/
