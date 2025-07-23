@@ -1,0 +1,38 @@
+   .heart-container {
+      cursor: pointer;
+      font-size: 30px;
+      display: inline-block;
+    }
+
+    .heart-checkbox {
+      display: none;
+    }
+
+    .heart-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    /* Icône vide par défaut (gris) */
+    .heart-icon::before {
+      content: "\f004"; /* fa-heart */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 400; /* regular */
+      color: #aaa;
+      display: inline-block;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Quand la checkbox est cochée */
+    .heart-checkbox:checked ~ .heart-icon::before {
+      font-weight: 900; /* fas = plein */
+      background: linear-gradient(45deg, #9356dc, #ff79da);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(1);
+    }
+
+    /* Effet clic visuel */
+    .heart-container:active .heart-icon {
+      transform: scale(0.9);
+    }

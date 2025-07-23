@@ -1,0 +1,225 @@
+.header__icon {
+     position : absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6%;
+    font-size: 1.5rem;
+}
+
+.main__img {
+    width: 100%;
+    object-fit: cover;      
+}
+
+img {
+    border-style: none;       
+}
+
+.menu__container__all {
+    margin-top: -5rem;
+    position: relative;
+    background-color: var(--main-bg-color);
+    border-radius: 50px 50px 0 0;
+    padding: 0 5% 7rem;
+}
+
+.menu__header {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__titre {
+    font-family: "Shrikhand";
+    font-weight: 340;
+    font-size: 1.75rem;
+    
+    letter-spacing: 2px;
+}
+
+.menu__subtitle {
+    font-size: 1.225rem;
+    font-weight: 400;
+    border-bottom: 3px solid var(--light-green);
+    padding-bottom: .5rem;
+    width: 2.5rem;
+}
+
+.menu__container {
+      background-color: #fff;       
+      border-radius: 22px; 
+      padding: .6rem;          
+      min-height: 1rem;
+      display: flex;                
+      justify-content: space-between;
+      align-items: center;         
+      overflow: hidden;            
+      margin-bottom: 1rem;
+      position: relative;          
+      cursor: pointer;              
+      user-select: none;           
+      border: none; 
+      opacity: 0;
+      animation: fadeSlideIn 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.all__div label:nth-child(1) { 
+    animation-delay: 0.2s; 
+}
+
+.all__div label:nth-child(2) { 
+    animation-delay: 0.4s; 
+}
+
+.all__div label:nth-child(3) { 
+    animation-delay: 0.6s; 
+}
+
+.all__div label:nth-child(4) { 
+    animation-delay: 0.8s; 
+}
+
+.all__div label:nth-child(5) { 
+    animation-delay: 1s;
+}
+
+.menu__container input {
+    display: none;                
+}
+
+    /*Contenu textuel : titre et sous-titre  */
+.menu__container-label {
+    z-index: 2;                                
+    flex-grow: 1;               
+    display: flex;               
+    flex-direction: column;      
+    gap: 4px;   
+    max-width: 100%;   
+    transition: max-width 0.3s ease;              
+}
+
+  
+
+    /* Animation : bande verte claire à droite  */
+.checkbox-highlight {
+    position: absolute;          
+    right: 0;                   
+    top: 0;
+    height: 100%;                 
+    width: 0;                     
+    background-color: #99E2D0;    
+    z-index: 1;                   
+    transition: width 0.3s ease;  
+    border-top-right-radius: 8px; 
+    border-bottom-right-radius: 8px;
+
+
+}
+
+    /*  Quand on coche la checkbox : bande verte = 5%  */
+.menu__container input:checked ~ .checkbox-highlight {
+    width: 3.5rem;
+}
+
+    /*  Numéro flottant à droite */
+.menu__price {
+    position: absolute;                   
+    right: 10px;                          
+    top: 50%;                             
+    transform: translateY(-50%);          
+    font-size: 16px;
+    z-index: 4;                           
+    transition: transform 0.3s ease;     
+    white-space: nowrap;                 
+    user-select: none;
+    font-weight: bolder;  
+  
+}
+
+    /* Quand cochée, le chiffre se déplace vers la gauche */
+.menu__container input:checked ~ .menu__price {
+    transform: translate(calc(-100% - 30px), -50%);
+}
+
+    /* Réduction dynamique du texte */
+.menu__container input:checked ~ .menu__container-label {
+    max-width: calc(100% - 85px); 
+}
+
+.menu__heading,
+.menu__paragraph {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+    /*  Cercle blanc contenant l'icône check  */
+.check-icon-wrapper {
+    position: absolute;
+    right: 15px;                          
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    background: white;                    
+    border-radius: 50%;                   
+    display: flex;                       
+    align-items: center;
+    justify-content: center;
+    opacity: 0;                           
+    transform: translateY(-50%) scale(0.5);
+    transition: all 0.3s ease;            
+    z-index: 5;                          
+    pointer-events: none;                
+ }
+
+    /*  Apparition du cercle au clic */
+.menu__container input:checked ~ .check-icon-wrapper {
+    opacity: 1;
+    transform: translateY(-50%) scale(1); 
+}
+
+    /*  Icone check dans le cercle  */
+.check-icon-wrapper i {
+    color: #99E2D0;                      
+    font-size: 14px;                      
+    line-height: 1;
+}
+
+
+
+.menu__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 4rem);
+    transition: all 500ms;
+}
+
+.menu__heading, .menu__paragraph {
+    margin: 0.4rem 0;
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.menu__heading {
+    font-size: 1.125rem;
+}
+
+.menu__paragraph {
+    font-size: 0.95rem;
+    margin-top: -.2rem;
+}

@@ -1,0 +1,23 @@
+.menu__button {
+    padding: 1.5rem 5rem;
+    margin-top: 5rem;
+}
+
+.btn {
+    color: white;
+    text-decoration: none;
+    width: fit-content;
+    text-align: center;
+    margin: 30px auto 0 auto;
+    background: linear-gradient(170deg, #ff79da, #9356dc);
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transform: translateY(-0.1rem);
+    box-shadow: 0.1rem 0.1rem 0.3rem 0 #5e5e5e;
+}
